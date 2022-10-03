@@ -47,23 +47,23 @@ def nerd_snipe(nx,ny,bx,by,cx,cy):
             else:
                 Arow.append(diag)
                 Acol.append(diag)
-                Adata.append(-4)
+                Adata.append(4)
 
                 Arow.append(diag)
                 Acol.append(diag-1)
-                Adata.append(1)
+                Adata.append(-1)
 
                 Arow.append(diag)
                 Acol.append(diag+1)
-                Adata.append(1)
+                Adata.append(-1)
 
                 Arow.append(diag)
                 Acol.append(diag+nx)
-                Adata.append(1)
+                Adata.append(-1)
 
                 Arow.append(diag)
                 Acol.append(diag-nx)
-                Adata.append(1)         
+                Adata.append(-1)         
 
     Adata_coo=coo_matrix((Adata, (Arow, Acol)), shape=(steps, steps))
     Adata_csr = Adata_coo.tocsr()
